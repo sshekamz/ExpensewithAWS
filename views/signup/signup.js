@@ -15,7 +15,6 @@ async function signup(event){
     
         let post= await axios.post("http://localhost:4000/user/signup",obj)
         
-        
     
     } catch (error) {
         console.log(error);

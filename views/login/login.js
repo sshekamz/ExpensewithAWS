@@ -11,6 +11,9 @@ async function login(event){
     };
     
         let post= await axios.post("http://localhost:4000/user/login",obj)
+        // if(post.response.status===200){
+        //     alert(post.response.message)
+        // }
         
         
     

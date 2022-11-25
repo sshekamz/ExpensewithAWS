@@ -9,9 +9,9 @@ app.use(bodyParser.json());
 
 const sequelize=require('./util/database');
 
-const signUpRoute=require('./routes/signupRouter');
+const userRoute=require('./routes/userRouter');
 
-app.use(signUpRoute);
+app.use(userRoute);
 
 sequelize
   .sync()
