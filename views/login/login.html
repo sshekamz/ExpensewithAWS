@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="../signup/signup.css">
+</head>
+<body>
+
+    <section id="container-body">
+        
+        <h1 id="title">Expense Tracker</h1>
+        <main>
+            
+            <section id="loginform">
+                
+                <form onsubmit="login(event)">
+                    <h3 id="logintitle">Login</h3>
+                    
+                    <label for="email">Email</label>
+                    <input type="email" class="email" id="email" required>
+                    <br>
+                    <label for="password">Password</label>
+                    <input type="password" class="password" id="password" required>
+                    <br>
+                    <button class="signup" onclick="window.location.href='../signup/signup.html'">Signup</button>
+                    <button class="login">Login</button>
+                    <button class="forgotpassword" onclick="window.location.href='../forgotpassword.html'"> Forgot Password</button>
+                </form>
+
+            </section>
+        </main>
+
+    </section>
+    <script src="./login.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+</body>
+</html>

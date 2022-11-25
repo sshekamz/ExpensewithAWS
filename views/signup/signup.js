@@ -12,12 +12,13 @@ async function signup(event){
         email,
         password
     };
-    console.log(obj);
+    
         let post= await axios.post("http://localhost:4000/user/signup",obj)
-        console.log(post.data)
+        
         
     
     } catch (error) {
         console.log(error);
+        
     }    
 }

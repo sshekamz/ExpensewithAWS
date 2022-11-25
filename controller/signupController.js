@@ -1,9 +1,8 @@
 const userSignup=require('../model/signupTable');
 
 const addUser= async(req,res,next)=>{
-    try {
-        
     
+    try {
     const name=req.body.name;
     const email=req.body.email;
     const password=req.body.password;
@@ -13,7 +12,10 @@ const addUser= async(req,res,next)=>{
         email:email,
         password:password
     });
+
     res.status(201).json({newUser:data});
+    
+        
 } catch (error) {
         console.log(error);
 }
