@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="../signup/signup.css">
+</head>
+<body>
+
+    <section id="container-body">
+        
+        <h1 id="title">Expense Tracker</h1>
+        <main>
+            
+            <section id="expenseform">
+                
+                <form onsubmit="addExpense(event)">
+                    <h3 id="expensetitle">Add Expense</h3>
+                    
+                    <label for="amount">Amount</label>
+                    <input type="number" class="amount" id="amount" required>
+                    <br>
+                    <label for="description">Description</label>
+                    <input type="text" class="description" id="description" required>
+                    <br>
+                    <label for="category">Category</label>
+                    <select name="choosecategory" id="category">
+                        <option value="Education">Education</option>
+                        <option value="Entertainmanent">Entertainmanent</option>
+                        <option value="Movie">Movie</option>
+                        <option value="Travel">Travel</option>
+                        <option value="illness">illness</option>
+                      </select>
+                      <br>
+                    
+                    <button class="addExpense">Add </button>
+                    
+                </form>
+                <div id="expenseList">
+
+                </div>
+            </section>
+        </main>
+
+    </section>
+    <script src="./expense.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+</body>
+</html>

@@ -13,7 +13,9 @@ async function signup(event){
         password
     };
     
-        let post= await axios.post("http://localhost:4000/user/signup",obj)
+        let post= await axios.post("http://localhost:4000/user/signup",obj).then(()=>{
+            alert('Signup Completed')
+        })
         
     
     } catch (error) {
