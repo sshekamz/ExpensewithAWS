@@ -1,5 +1,7 @@
 const express=require('express')
 
+const userAuthenticate=require('../middleware/authenticate')
+
 const route=express();
 
 const userController=require('../controller/userController')
@@ -9,14 +11,14 @@ route.post('/user/signup', userController.signupUser)
 
 route.post('/user/login',userController.loginUser);
 
-//PUT
-route.post('/user/add-expense', expenseController.addExpense);
+//POST
+route.post('/user/add-expense',userAuthenticate.authenticate, expenseController.addExpense);
 
 //GET
 
-route.get('/user/get-expense', expenseController.getExpense);
+route.get('/user/get-expense',userAuthenticate.authenticate ,expenseController.getExpense);
 
 //DELETE
-route.delete('/user/delete-expense/:id', expenseController.deleteExpense);
+route.delete('/user/delete-expense/:id',userAuthenticate.authenticate, expenseController.deleteExpense);
 
 module.exports=route;

@@ -10,13 +10,12 @@ async function login(event){
         password
     };
     
-        let post= await axios.post("http://localhost:4000/user/login",obj)
-        // if(post.response.status===200){
-        //     alert(post.response.message)
-        // }
+        await axios.post("http://localhost:4000/user/login",obj).then((response)=>{
+            alert(response.data.message);
+            localStorage.setItem('token',response.data.token)
+            window.location.href='../addExpense/expense.html'
+        })
         
-        
-    
     } catch (error) {
         console.log(error);
         

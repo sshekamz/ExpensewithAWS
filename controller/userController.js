@@ -1,5 +1,10 @@
 const User=require('../model/signupTable');
 const brcypt=require('bcrypt')
+const jwt=require('jsonwebtoken')
+
+function generateToken(id,name){
+    return jwt.sign({userId:id,name:name},'bigerkey12345')
+}
 
 function isStringValid(string){
     if(string===undefined||string.length===0){
@@ -46,7 +51,7 @@ const loginUser=async(req,res,next)=>{
 
                     }
                     if(result===true){
-                        res.status(200).json({message:"logged Successfully"})
+                        res.status(200).json({message:"logged Successfully",token:generateToken(user[0].id,user[0].name)})
                     }
                 
                  else{

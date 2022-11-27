@@ -14,7 +14,9 @@ async function signup(event){
     };
     
         let post= await axios.post("http://localhost:4000/user/signup",obj).then(()=>{
+
             alert('Signup Completed')
+            window.location.href='../login/login.html'
         })
         
     

@@ -14,7 +14,8 @@ async function addExpense(event){
         description
     };
     //console.log(obj);
-        let post= await axios.post("http://localhost:4000/user/add-expense",obj)
+        const token=localStorage.getItem('token')
+        let post= await axios.post("http://localhost:4000/user/add-expense",obj,{headers:{"Authorization":token}})
         showExpense(post.data.newExpenseDetail);
     
     } catch (error) {
@@ -26,7 +27,8 @@ async function addExpense(event){
 window.addEventListener("DOMContentLoaded", async () => {
   
     try {
-        let getData = await axios.get("http://localhost:4000/user/get-expense")
+        const token=localStorage.getItem('token')
+        let getData = await axios.get("http://localhost:4000/user/get-expense",{headers:{"Authorization":token}})
         for(let i=0;i<getData.data.allExpenses.length;i++){
             showExpense(getData.data.allExpenses[i]);
         }
@@ -56,7 +58,8 @@ function showExpense(expense){
 
   async function deleteExpense(eId){
     try {
-    let deleteE=await axios.delete(`http://localhost:4000/user/delete-expense/${eId}`)
+    const token=localStorage.getItem('token')
+    let deleteE=await axios.delete(`http://localhost:4000/user/delete-expense/${eId}`,{headers:{"Authorization":token}})
         //console.log(deleteE);
         removeExpenseFromScreen(eId)
     } catch (error) {
