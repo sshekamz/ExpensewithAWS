@@ -23,8 +23,10 @@ const getExpense=async(req,res,next)=>{
 
     try {
         await Expense.findAll({where:{userId:req.user.id}}).then(expenses=>{
+            
             return res.status(200).json({allExpenses:expenses});
         })
+        
             
     } catch (error) {
         //console.log(err);
